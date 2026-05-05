@@ -21,7 +21,7 @@ CREATE TABLE Asignatura(
 );
 
 CREATE TABLE Matricula(
-    id_mat int primary key,
+    id_mat serial primary key,
 	id_alum int,
 	id_asig int,
 	curso int,
