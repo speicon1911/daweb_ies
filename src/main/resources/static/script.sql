@@ -29,7 +29,6 @@ CREATE TABLE Matricula(
 	constraint fk_mat_alum foreign key (id_alum) references Alumno(id),
 	constraint fk_mat_asig foreign key (id_asig) references Asignatura(id)
 );
-
 INSERT INTO Profesor (id, nombre, apellidos, especialidad) VALUES
 (1, 'José Antonio', 'Martínez López', 'Bases de Datos'),
 (2, 'María del Carmen', 'Ruiz Sánchez', 'Programación'),
@@ -59,32 +58,31 @@ INSERT INTO Alumno (id, nombre, apellidos, ipasen) VALUES
 (19, 'Hugo', 'Fernández Ramos', 'ALU019'),
 (20, 'Inés', 'Romero Navarro', 'ALU020');
 
-INSERT INTO Asignatura (id, nombre, horas, imparte) VALUES
+INSERT INTO Asignatura (id, nombre, horas, profesor_id) VALUES
 (1, 'Bases de Datos', 160, 1),
 (2, 'Programación', 240, 2),
 (3, 'Sistemas Informáticos', 200, 3),
 (4, 'Entornos de Desarrollo', 120, 4),
 (5, 'Lenguajes de Marcas', 100, 5);
 
-
-INSERT INTO Matricula (id_alum, id_asig, curso, nota_media) VALUES
-(1, 1, 2025, 7.50),
-(1, 2, 2025, 8.00),
-(2, 1, 2025, 6.25),
-(2, 3, 2025, 7.80),
-(3, 2, 2025, 5.50),
-(3, 5, 2025, 6.75),
-(4, 1, 2025, 9.00),
-(4, 4, 2025, 8.25),
-(5, 3, 2025, 7.10),
-(5, 2, 2025, 6.40),
-(6, 1, 2025, 5.90),
-(7, 5, 2025, 7.30),
-(8, 2, 2025, 8.90),
-(9, 3, 2025, 6.60),
-(10, 4, 2025, 7.70),
-(11, 1, 2025, 8.10),
-(12, 2, 2025, 6.80),
-(13, 3, 2025, 7.90),
-(14, 4, 2025, 5.60),
-(15, 5, 2025, 8.30);
+INSERT INTO Matricula (id_mat, id_alum, id_asig, curso, nota_media) VALUES
+(1, 1, 1, 2025, 7.50),
+(2, 1, 2, 2025, 8.00),
+(3, 2, 1, 2025, 6.25),
+(4, 2, 3, 2025, 7.80),
+(5, 3, 2, 2025, 5.50),
+(6, 3, 5, 2025, 6.75),
+(7, 4, 1, 2025, 9.00),
+(8, 4, 4, 2025, 8.25),
+(9, 5, 3, 2025, 7.10),
+(10, 5, 2, 2025, 6.40),
+(11, 6, 1, 2025, 5.90),
+(12, 7, 5, 2025, 7.30),
+(13, 8, 2, 2025, 8.90),
+(14, 9, 3, 2025, 6.60),
+(15, 10, 4, 2025, 7.70),
+(16, 11, 1, 2025, 8.10),
+(17, 12, 2, 2025, 6.80),
+(18, 13, 3, 2025, 7.90),
+(19, 14, 4, 2025, 5.60),
+(20, 15, 5, 2025, 8.30);
